@@ -150,7 +150,12 @@ float calcHeight(float analogVal) {
     // return 2.487 * analogVal - 252.8;
 
     // Messung mit Neoprenkabel
-    return (2.479 * analogVal - 473.2) / 100;
+    float cmNeopren = 2.479 * analogVal - 473.2;
+    float mNeopren = cmNeopren / 100;
+
+    // Plus oan Meter vierzig weil isch so
+    float mNeoprenAdjusted = mNeopren + 1.375;
+    return mNeoprenAdjusted;
 }
 
 void printReadingsToSerial(int avgAnalogVal, float quotientVal, float voltVal, float avgHeight) {
