@@ -80,6 +80,8 @@ void loop() {
   float height = calcHeight(avgAnalogVal);
 
   sendData(height);
+
+  reset_iterations++;
   delay(600000);
 }
 
